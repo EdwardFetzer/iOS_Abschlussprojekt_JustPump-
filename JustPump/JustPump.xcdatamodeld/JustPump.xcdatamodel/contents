@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="GainExercise" representedClassName="GainExercise" syncable="YES" codeGenerationType="class">
+        <attribute name="gainExerciseName" optional="YES" attributeType="String"/>
+        <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="gainTraining" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GainTraining" inverseName="gainExercises" inverseEntity="GainTraining"/>
+    </entity>
+    <entity name="GainTraining" representedClassName="GainTraining" syncable="YES" codeGenerationType="class">
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="gainExercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GainExercise" inverseName="gainTraining" inverseEntity="GainExercise"/>
+    </entity>
 </model>

@@ -1,9 +1,8 @@
 //
-//  Utilities.swift
-//  customauth
+//  Utillities.swift
+//  JustPump
 //
-//  Created by Christopher Ching on 2019-05-09.
-//  Copyright © 2019 Christopher Ching. All rights reserved.
+//  Created by Edward Fetzer on 20.10.22.
 //
 
 import Foundation

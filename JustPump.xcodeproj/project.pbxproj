@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E23AEA42290FD4F4007B4845 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23AEA41290FD4F4007B4845 /* APIClient.swift */; };
+		E23AEA44290FD519007B4845 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23AEA43290FD519007B4845 /* APIKey.swift */; };
+		E23AEA46290FD54C007B4845 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23AEA45290FD54C007B4845 /* Macros.swift */; };
+		E23AEA49290FFD5F007B4845 /* GainDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23AEA48290FFD5F007B4845 /* GainDetailVC.swift */; };
+		E23AEA4C291003B3007B4845 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23AEA4B291003B3007B4845 /* Constants.swift */; };
+		E23AEA4E29100416007B4845 /* GainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23AEA4D29100416007B4845 /* GainVC.swift */; };
 		E2531C4129012E1200B90D0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2531C4029012E1200B90D0F /* AppDelegate.swift */; };
 		E2531C4329012E1200B90D0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2531C4229012E1200B90D0F /* SceneDelegate.swift */; };
 		E2531C4529012E1200B90D0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2531C4429012E1200B90D0F /* ViewController.swift */; };
@@ -19,16 +25,26 @@
 		E2531C5D290131D000B90D0F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E2531C5C290131D000B90D0F /* FirebaseAuth */; };
 		E2531C5F290131D000B90D0F /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E2531C5E290131D000B90D0F /* FirebaseFirestoreSwift */; };
 		E2531C61290131D000B90D0F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E2531C60290131D000B90D0F /* FirebaseStorage */; };
-		E2531C6729014A4600B90D0F /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2531C6629014A4600B90D0F /* TrainingVC.swift */; };
-		E2531C6929014A5000B90D0F /* ExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2531C6829014A5000B90D0F /* ExerciseVC.swift */; };
-		E2531C6B29014A9000B90D0F /* CaloriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2531C6A29014A9000B90D0F /* CaloriesVC.swift */; };
-		E2531C6D29014B2C00B90D0F /* GainsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2531C6C29014B2B00B90D0F /* GainsVC.swift */; };
+		E2531C6D29014B2C00B90D0F /* GainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2531C6C29014B2B00B90D0F /* GainCell.swift */; };
 		E2531C712902840800B90D0F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2531C702902840800B90D0F /* HomeVC.swift */; };
 		E2531C75290299B500B90D0F /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2531C74290299B500B90D0F /* RegisterVC.swift */; };
 		E2531C7729029B1A00B90D0F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2531C7629029B1A00B90D0F /* Utilities.swift */; };
+		E2A2A268290FCA7B00CBDEAA /* CaloriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2A267290FCA7B00CBDEAA /* CaloriesVC.swift */; };
+		E2D7B258291015AF00A2441B /* GainExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7B257291015AF00A2441B /* GainExerciseCell.swift */; };
+		E2E84A2E2913E8F400B96977 /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A2D2913E8F400B96977 /* TrainingVC.swift */; };
+		E2E84A302913EF5200B96977 /* TrainingCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A2F2913EF5200B96977 /* TrainingCVCell.swift */; };
+		E2E84A322913FEDD00B96977 /* NutritionCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A312913FEDD00B96977 /* NutritionCVCell.swift */; };
+		E2E84A342913FF0C00B96977 /* NutritionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A332913FF0C00B96977 /* NutritionVC.swift */; };
+		E2E84A3629154DAD00B96977 /* TrainingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A3529154DAD00B96977 /* TrainingDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E23AEA41290FD4F4007B4845 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		E23AEA43290FD519007B4845 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		E23AEA45290FD54C007B4845 /* Macros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
+		E23AEA48290FFD5F007B4845 /* GainDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GainDetailVC.swift; sourceTree = "<group>"; };
+		E23AEA4B291003B3007B4845 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E23AEA4D29100416007B4845 /* GainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GainVC.swift; sourceTree = "<group>"; };
 		E2531C3D29012E1200B90D0F /* JustPump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustPump.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2531C4029012E1200B90D0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2531C4229012E1200B90D0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,13 +55,17 @@
 		E2531C4F29012E1400B90D0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2531C5129012E1400B90D0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2531C5729012F4800B90D0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E2531C6629014A4600B90D0F /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
-		E2531C6829014A5000B90D0F /* ExerciseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseVC.swift; sourceTree = "<group>"; };
-		E2531C6A29014A9000B90D0F /* CaloriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesVC.swift; sourceTree = "<group>"; };
-		E2531C6C29014B2B00B90D0F /* GainsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GainsVC.swift; sourceTree = "<group>"; };
+		E2531C6C29014B2B00B90D0F /* GainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GainCell.swift; sourceTree = "<group>"; };
 		E2531C702902840800B90D0F /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		E2531C74290299B500B90D0F /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		E2531C7629029B1A00B90D0F /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		E2A2A267290FCA7B00CBDEAA /* CaloriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesVC.swift; sourceTree = "<group>"; };
+		E2D7B257291015AF00A2441B /* GainExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GainExerciseCell.swift; sourceTree = "<group>"; };
+		E2E84A2D2913E8F400B96977 /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
+		E2E84A2F2913EF5200B96977 /* TrainingCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCVCell.swift; sourceTree = "<group>"; };
+		E2E84A312913FEDD00B96977 /* NutritionCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionCVCell.swift; sourceTree = "<group>"; };
+		E2E84A332913FF0C00B96977 /* NutritionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionVC.swift; sourceTree = "<group>"; };
+		E2E84A3529154DAD00B96977 /* TrainingDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +83,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E23AEA40290FD4CB007B4845 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E23AEA41290FD4F4007B4845 /* APIClient.swift */,
+				E23AEA43290FD519007B4845 /* APIKey.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		E23AEA47290FFB19007B4845 /* GainsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E23AEA4D29100416007B4845 /* GainVC.swift */,
+				E23AEA48290FFD5F007B4845 /* GainDetailVC.swift */,
+				E2531C6C29014B2B00B90D0F /* GainCell.swift */,
+				E2D7B257291015AF00A2441B /* GainExerciseCell.swift */,
+			);
+			path = GainsScreen;
+			sourceTree = "<group>";
+		};
+		E23AEA4A2910039B007B4845 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E23AEA4B291003B3007B4845 /* Constants.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E2531C3429012E1200B90D0F = {
 			isa = PBXGroup;
 			children = (
@@ -82,10 +130,14 @@
 		E2531C3F29012E1200B90D0F /* JustPump */ = {
 			isa = PBXGroup;
 			children = (
+				E23AEA40290FD4CB007B4845 /* API */,
+				E2A2A266290FC97B00CBDEAA /* CaloriesScreen */,
 				E2531C722902998200B90D0F /* RegisterScreen */,
 				E2531C6F2901505D00B90D0F /* TrainingScreen */,
 				E2531C6E2901502100B90D0F /* HomeScreen */,
-				E2531C62290149E300B90D0F /* Views */,
+				E2531C62290149E300B90D0F /* NutritionScreen */,
+				E23AEA47290FFB19007B4845 /* GainsScreen */,
+				E23AEA4A2910039B007B4845 /* Model */,
 				E2531C4029012E1200B90D0F /* AppDelegate.swift */,
 				E2531C4229012E1200B90D0F /* SceneDelegate.swift */,
 				E2531C4429012E1200B90D0F /* ViewController.swift */,
@@ -100,14 +152,13 @@
 			path = JustPump;
 			sourceTree = "<group>";
 		};
-		E2531C62290149E300B90D0F /* Views */ = {
+		E2531C62290149E300B90D0F /* NutritionScreen */ = {
 			isa = PBXGroup;
 			children = (
-				E2531C6829014A5000B90D0F /* ExerciseVC.swift */,
-				E2531C6A29014A9000B90D0F /* CaloriesVC.swift */,
-				E2531C6C29014B2B00B90D0F /* GainsVC.swift */,
+				E2E84A332913FF0C00B96977 /* NutritionVC.swift */,
+				E2E84A312913FEDD00B96977 /* NutritionCVCell.swift */,
 			);
-			path = Views;
+			path = NutritionScreen;
 			sourceTree = "<group>";
 		};
 		E2531C6E2901502100B90D0F /* HomeScreen */ = {
@@ -121,7 +172,9 @@
 		E2531C6F2901505D00B90D0F /* TrainingScreen */ = {
 			isa = PBXGroup;
 			children = (
-				E2531C6629014A4600B90D0F /* TrainingVC.swift */,
+				E2E84A2D2913E8F400B96977 /* TrainingVC.swift */,
+				E2E84A2F2913EF5200B96977 /* TrainingCVCell.swift */,
+				E2E84A3529154DAD00B96977 /* TrainingDetailVC.swift */,
 			);
 			path = TrainingScreen;
 			sourceTree = "<group>";
@@ -132,6 +185,15 @@
 				E2531C74290299B500B90D0F /* RegisterVC.swift */,
 			);
 			path = RegisterScreen;
+			sourceTree = "<group>";
+		};
+		E2A2A266290FC97B00CBDEAA /* CaloriesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E2A2A267290FCA7B00CBDEAA /* CaloriesVC.swift */,
+				E23AEA45290FD54C007B4845 /* Macros.swift */,
+			);
+			path = CaloriesScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,17 +277,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2531C6D29014B2C00B90D0F /* GainsVC.swift in Sources */,
+				E2531C6D29014B2C00B90D0F /* GainCell.swift in Sources */,
 				E2531C4529012E1200B90D0F /* ViewController.swift in Sources */,
 				E2531C7729029B1A00B90D0F /* Utilities.swift in Sources */,
-				E2531C6929014A5000B90D0F /* ExerciseVC.swift in Sources */,
 				E2531C712902840800B90D0F /* HomeVC.swift in Sources */,
-				E2531C6729014A4600B90D0F /* TrainingVC.swift in Sources */,
+				E23AEA46290FD54C007B4845 /* Macros.swift in Sources */,
+				E2E84A3629154DAD00B96977 /* TrainingDetailVC.swift in Sources */,
+				E23AEA4C291003B3007B4845 /* Constants.swift in Sources */,
+				E2A2A268290FCA7B00CBDEAA /* CaloriesVC.swift in Sources */,
+				E2E84A2E2913E8F400B96977 /* TrainingVC.swift in Sources */,
 				E2531C4B29012E1200B90D0F /* JustPump.xcdatamodeld in Sources */,
+				E23AEA44290FD519007B4845 /* APIKey.swift in Sources */,
 				E2531C4129012E1200B90D0F /* AppDelegate.swift in Sources */,
-				E2531C6B29014A9000B90D0F /* CaloriesVC.swift in Sources */,
+				E23AEA49290FFD5F007B4845 /* GainDetailVC.swift in Sources */,
+				E23AEA42290FD4F4007B4845 /* APIClient.swift in Sources */,
+				E2E84A342913FF0C00B96977 /* NutritionVC.swift in Sources */,
+				E2D7B258291015AF00A2441B /* GainExerciseCell.swift in Sources */,
 				E2531C4329012E1200B90D0F /* SceneDelegate.swift in Sources */,
 				E2531C75290299B500B90D0F /* RegisterVC.swift in Sources */,
+				E2E84A302913EF5200B96977 /* TrainingCVCell.swift in Sources */,
+				E2E84A322913FEDD00B96977 /* NutritionCVCell.swift in Sources */,
+				E23AEA4E29100416007B4845 /* GainVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

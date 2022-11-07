@@ -35,7 +35,8 @@
 		E2E84A302913EF5200B96977 /* TrainingCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A2F2913EF5200B96977 /* TrainingCVCell.swift */; };
 		E2E84A322913FEDD00B96977 /* NutritionCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A312913FEDD00B96977 /* NutritionCVCell.swift */; };
 		E2E84A342913FF0C00B96977 /* NutritionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A332913FF0C00B96977 /* NutritionVC.swift */; };
-		E2E84A3629154DAD00B96977 /* TrainingDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A3529154DAD00B96977 /* TrainingDetailVC.swift */; };
+		E2E84A392915535D00B96977 /* ExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A382915535D00B96977 /* ExerciseVC.swift */; };
+		E2E84A3B2915545D00B96977 /* ExerciseCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A3A2915545D00B96977 /* ExerciseCVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +66,8 @@
 		E2E84A2F2913EF5200B96977 /* TrainingCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCVCell.swift; sourceTree = "<group>"; };
 		E2E84A312913FEDD00B96977 /* NutritionCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionCVCell.swift; sourceTree = "<group>"; };
 		E2E84A332913FF0C00B96977 /* NutritionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionVC.swift; sourceTree = "<group>"; };
-		E2E84A3529154DAD00B96977 /* TrainingDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingDetailVC.swift; sourceTree = "<group>"; };
+		E2E84A382915535D00B96977 /* ExerciseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseVC.swift; sourceTree = "<group>"; };
+		E2E84A3A2915545D00B96977 /* ExerciseCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +176,7 @@
 			children = (
 				E2E84A2D2913E8F400B96977 /* TrainingVC.swift */,
 				E2E84A2F2913EF5200B96977 /* TrainingCVCell.swift */,
-				E2E84A3529154DAD00B96977 /* TrainingDetailVC.swift */,
+				E2E84A372915532200B96977 /* ExerciseScreen */,
 			);
 			path = TrainingScreen;
 			sourceTree = "<group>";
@@ -194,6 +196,15 @@
 				E23AEA45290FD54C007B4845 /* Macros.swift */,
 			);
 			path = CaloriesScreen;
+			sourceTree = "<group>";
+		};
+		E2E84A372915532200B96977 /* ExerciseScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E2E84A382915535D00B96977 /* ExerciseVC.swift */,
+				E2E84A3A2915545D00B96977 /* ExerciseCVCell.swift */,
+			);
+			path = ExerciseScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,11 +293,11 @@
 				E2531C7729029B1A00B90D0F /* Utilities.swift in Sources */,
 				E2531C712902840800B90D0F /* HomeVC.swift in Sources */,
 				E23AEA46290FD54C007B4845 /* Macros.swift in Sources */,
-				E2E84A3629154DAD00B96977 /* TrainingDetailVC.swift in Sources */,
 				E23AEA4C291003B3007B4845 /* Constants.swift in Sources */,
 				E2A2A268290FCA7B00CBDEAA /* CaloriesVC.swift in Sources */,
 				E2E84A2E2913E8F400B96977 /* TrainingVC.swift in Sources */,
 				E2531C4B29012E1200B90D0F /* JustPump.xcdatamodeld in Sources */,
+				E2E84A392915535D00B96977 /* ExerciseVC.swift in Sources */,
 				E23AEA44290FD519007B4845 /* APIKey.swift in Sources */,
 				E2531C4129012E1200B90D0F /* AppDelegate.swift in Sources */,
 				E23AEA49290FFD5F007B4845 /* GainDetailVC.swift in Sources */,
@@ -297,6 +308,7 @@
 				E2531C75290299B500B90D0F /* RegisterVC.swift in Sources */,
 				E2E84A302913EF5200B96977 /* TrainingCVCell.swift in Sources */,
 				E2E84A322913FEDD00B96977 /* NutritionCVCell.swift in Sources */,
+				E2E84A3B2915545D00B96977 /* ExerciseCVCell.swift in Sources */,
 				E23AEA4E29100416007B4845 /* GainVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

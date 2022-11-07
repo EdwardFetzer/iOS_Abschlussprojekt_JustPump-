@@ -9,20 +9,17 @@ import UIKit
 
 class TrainingVC: UIViewController {
     
+    
+    
     @IBOutlet weak var trainingCollectionView: UICollectionView!
     
     var trainingList = ["Bauch","Rücken","Beine"]
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-
-
 }
 
 extension TrainingVC: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -37,5 +34,11 @@ extension TrainingVC: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showExercises" {
+            var viewController = segue.description as! ExerciseVC
+            viewController.showExercises = selected
+        }
+    }
     
 }

@@ -29,7 +29,9 @@
 		E2531C712902840800B90D0F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2531C702902840800B90D0F /* HomeVC.swift */; };
 		E2531C75290299B500B90D0F /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2531C74290299B500B90D0F /* RegisterVC.swift */; };
 		E2531C7729029B1A00B90D0F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2531C7629029B1A00B90D0F /* Utilities.swift */; };
+		E263116C291D373400987813 /* ExerciseDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E263116B291D373400987813 /* ExerciseDetailVC.swift */; };
 		E2A2A268290FCA7B00CBDEAA /* CaloriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2A267290FCA7B00CBDEAA /* CaloriesVC.swift */; };
+		E2C83381291ACD1500EFB4CC /* ExerciseResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C83380291ACD1500EFB4CC /* ExerciseResources.swift */; };
 		E2D7B258291015AF00A2441B /* GainExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D7B257291015AF00A2441B /* GainExerciseCell.swift */; };
 		E2E84A2E2913E8F400B96977 /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A2D2913E8F400B96977 /* TrainingVC.swift */; };
 		E2E84A302913EF5200B96977 /* TrainingCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A2F2913EF5200B96977 /* TrainingCVCell.swift */; };
@@ -37,6 +39,10 @@
 		E2E84A342913FF0C00B96977 /* NutritionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A332913FF0C00B96977 /* NutritionVC.swift */; };
 		E2E84A392915535D00B96977 /* ExerciseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A382915535D00B96977 /* ExerciseVC.swift */; };
 		E2E84A3B2915545D00B96977 /* ExerciseCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A3A2915545D00B96977 /* ExerciseCVCell.swift */; };
+		E2E84A3E2919234900B96977 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E2E84A3D2919234900B96977 /* FirebaseDatabase */; };
+		E2E84A4029194ADB00B96977 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A3F29194ADB00B96977 /* Training.swift */; };
+		E2E84A4229194B7000B96977 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A4129194B7000B96977 /* Exercise.swift */; };
+		E2E84A442919503400B96977 /* TrainingResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E84A432919503400B96977 /* TrainingResources.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,7 +66,9 @@
 		E2531C702902840800B90D0F /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		E2531C74290299B500B90D0F /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		E2531C7629029B1A00B90D0F /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		E263116B291D373400987813 /* ExerciseDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailVC.swift; sourceTree = "<group>"; };
 		E2A2A267290FCA7B00CBDEAA /* CaloriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaloriesVC.swift; sourceTree = "<group>"; };
+		E2C83380291ACD1500EFB4CC /* ExerciseResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseResources.swift; sourceTree = "<group>"; };
 		E2D7B257291015AF00A2441B /* GainExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GainExerciseCell.swift; sourceTree = "<group>"; };
 		E2E84A2D2913E8F400B96977 /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
 		E2E84A2F2913EF5200B96977 /* TrainingCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCVCell.swift; sourceTree = "<group>"; };
@@ -68,6 +76,9 @@
 		E2E84A332913FF0C00B96977 /* NutritionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionVC.swift; sourceTree = "<group>"; };
 		E2E84A382915535D00B96977 /* ExerciseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseVC.swift; sourceTree = "<group>"; };
 		E2E84A3A2915545D00B96977 /* ExerciseCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCVCell.swift; sourceTree = "<group>"; };
+		E2E84A3F29194ADB00B96977 /* Training.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Training.swift; sourceTree = "<group>"; };
+		E2E84A4129194B7000B96977 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		E2E84A432919503400B96977 /* TrainingResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingResources.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2E84A3E2919234900B96977 /* FirebaseDatabase in Frameworks */,
 				E2531C5B290131D000B90D0F /* FirebaseAnalytics in Frameworks */,
 				E2531C61290131D000B90D0F /* FirebaseStorage in Frameworks */,
 				E2531C5D290131D000B90D0F /* FirebaseAuth in Frameworks */,
@@ -109,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				E23AEA4B291003B3007B4845 /* Constants.swift */,
+				E2E84A432919503400B96977 /* TrainingResources.swift */,
+				E2C83380291ACD1500EFB4CC /* ExerciseResources.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,6 +132,7 @@
 			children = (
 				E2531C3F29012E1200B90D0F /* JustPump */,
 				E2531C3E29012E1200B90D0F /* Products */,
+				E2E84A3C2919234900B96977 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,6 +191,7 @@
 			children = (
 				E2E84A2D2913E8F400B96977 /* TrainingVC.swift */,
 				E2E84A2F2913EF5200B96977 /* TrainingCVCell.swift */,
+				E2E84A3F29194ADB00B96977 /* Training.swift */,
 				E2E84A372915532200B96977 /* ExerciseScreen */,
 			);
 			path = TrainingScreen;
@@ -202,9 +218,18 @@
 			isa = PBXGroup;
 			children = (
 				E2E84A382915535D00B96977 /* ExerciseVC.swift */,
+				E263116B291D373400987813 /* ExerciseDetailVC.swift */,
 				E2E84A3A2915545D00B96977 /* ExerciseCVCell.swift */,
+				E2E84A4129194B7000B96977 /* Exercise.swift */,
 			);
 			path = ExerciseScreen;
+			sourceTree = "<group>";
+		};
+		E2E84A3C2919234900B96977 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +253,7 @@
 				E2531C5C290131D000B90D0F /* FirebaseAuth */,
 				E2531C5E290131D000B90D0F /* FirebaseFirestoreSwift */,
 				E2531C60290131D000B90D0F /* FirebaseStorage */,
+				E2E84A3D2919234900B96977 /* FirebaseDatabase */,
 			);
 			productName = JustPump;
 			productReference = E2531C3D29012E1200B90D0F /* JustPump.app */;
@@ -294,6 +320,7 @@
 				E2531C712902840800B90D0F /* HomeVC.swift in Sources */,
 				E23AEA46290FD54C007B4845 /* Macros.swift in Sources */,
 				E23AEA4C291003B3007B4845 /* Constants.swift in Sources */,
+				E2E84A442919503400B96977 /* TrainingResources.swift in Sources */,
 				E2A2A268290FCA7B00CBDEAA /* CaloriesVC.swift in Sources */,
 				E2E84A2E2913E8F400B96977 /* TrainingVC.swift in Sources */,
 				E2531C4B29012E1200B90D0F /* JustPump.xcdatamodeld in Sources */,
@@ -302,14 +329,18 @@
 				E2531C4129012E1200B90D0F /* AppDelegate.swift in Sources */,
 				E23AEA49290FFD5F007B4845 /* GainDetailVC.swift in Sources */,
 				E23AEA42290FD4F4007B4845 /* APIClient.swift in Sources */,
+				E2C83381291ACD1500EFB4CC /* ExerciseResources.swift in Sources */,
 				E2E84A342913FF0C00B96977 /* NutritionVC.swift in Sources */,
 				E2D7B258291015AF00A2441B /* GainExerciseCell.swift in Sources */,
 				E2531C4329012E1200B90D0F /* SceneDelegate.swift in Sources */,
+				E2E84A4229194B7000B96977 /* Exercise.swift in Sources */,
 				E2531C75290299B500B90D0F /* RegisterVC.swift in Sources */,
 				E2E84A302913EF5200B96977 /* TrainingCVCell.swift in Sources */,
 				E2E84A322913FEDD00B96977 /* NutritionCVCell.swift in Sources */,
 				E2E84A3B2915545D00B96977 /* ExerciseCVCell.swift in Sources */,
+				E263116C291D373400987813 /* ExerciseDetailVC.swift in Sources */,
 				E23AEA4E29100416007B4845 /* GainVC.swift in Sources */,
+				E2E84A4029194ADB00B96977 /* Training.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +596,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E2531C59290131D000B90D0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		E2E84A3D2919234900B96977 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2531C59290131D000B90D0F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
 		};
 /* End XCSwiftPackageProductDependency section */
 

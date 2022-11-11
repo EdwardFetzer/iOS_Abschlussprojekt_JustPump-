@@ -13,13 +13,17 @@ class TrainingVC: UIViewController {
     
     @IBOutlet weak var trainingCollectionView: UICollectionView!
     
-    var trainingList = ["Bauch","Rücken","Beine"]
+    var trainingList = getAllTraining()
+    
+    var selectedTraining: Training!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
+    
 }
 
 extension TrainingVC: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -29,16 +33,26 @@ extension TrainingVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "trainingCell", for: indexPath) as! TrainingCVCell
-        cell.trainingTitleLbl.text = self.trainingList[indexPath.row]
+        let training = self.trainingList[indexPath.row]
+        cell.trainingTitleLbl.text = training.trainingName
+        cell.trainingTitleLbl.sizeToFit()
+        cell.trainingImageIv.image = UIImage(named: training.trainingImageRes)
         print("1.Punkt")
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "showExercises" {
-            var viewController = segue.description as! ExerciseVC
-            viewController.showExercises = selected
+            let viewController = segue.destination as! ExerciseVC
+            print(selectedTraining.trainingName)
+            viewController.showSelectedTraining = selectedTraining
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedTraining = trainingList[indexPath.row]
+        performSegue(withIdentifier: "showExercises", sender: nil)
     }
     
 }

@@ -20,6 +20,7 @@ class ExerciseVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         exerciseList = showSelectedTraining.trainingExercises
+        exerciseCollectionView.backgroundColor = UIColor.clear
 
         // Do any additional setup after loading the view.
     }
@@ -33,6 +34,7 @@ extension ExerciseVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exerciseCell", for: indexPath) as! ExerciseCVCell
         cell.exerciseTitleLbl.text = self.exerciseList[indexPath.row].exerciseName
+        cell.exerciseTitleLbl.sizeToFit()
         cell.exerciseImmageIv.image = UIImage(named: exerciseList[indexPath.row].exerciseImageRes)
         return cell
     }

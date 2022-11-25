@@ -16,10 +16,17 @@ class TrainingVC: UIViewController {
     var trainingList = getAllTraining()
     
     var selectedTraining: Training!
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
+        trainingCollectionView.backgroundColor = UIColor.clear
         // Do any additional setup after loading the view.
         
     }
@@ -37,7 +44,6 @@ extension TrainingVC: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.trainingTitleLbl.text = training.trainingName
         cell.trainingTitleLbl.sizeToFit()
         cell.trainingImageIv.image = UIImage(named: training.trainingImageRes)
-        print("1.Punkt")
         return cell
     }
     

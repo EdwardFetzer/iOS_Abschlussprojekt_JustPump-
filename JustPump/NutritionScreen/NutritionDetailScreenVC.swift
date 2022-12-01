@@ -11,7 +11,6 @@ class NutritionDetailScreenVC: UIViewController {
     
     var showSelectedNutrition: Nutrition!
     
-    @IBOutlet weak var nutritionDetailSV: UIScrollView!
     @IBOutlet weak var nutritionImageIV: UIImageView!
     @IBOutlet weak var nutritionTitleLbl: UILabel!
     @IBOutlet weak var nutritionDetailTextView: UITextView!

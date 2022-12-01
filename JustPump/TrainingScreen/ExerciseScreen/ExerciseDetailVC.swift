@@ -11,10 +11,9 @@ class ExerciseDetailVC: UIViewController {
     
     var showSelectedExercise: Exercise!
     
-    @IBOutlet weak var exerciseDeteilSV: UIScrollView!
     @IBOutlet weak var exerciseImageIV: UIImageView!
     @IBOutlet weak var exerciseTitleLbl: UILabel!
-    @IBOutlet weak var exerciseDescriptionLbl: UILabel!
+    @IBOutlet weak var exerciseDescriptionTV: UITextView!
     
 
     override func viewDidLoad() {
@@ -23,10 +22,10 @@ class ExerciseDetailVC: UIViewController {
         exerciseImageIV.image = UIImage(named: showSelectedExercise.exerciseImageRes)
         exerciseTitleLbl.text = showSelectedExercise.exerciseName
         exerciseTitleLbl.sizeToFit()
-        exerciseDescriptionLbl.text = showSelectedExercise.exerciseDescription
-        exerciseDescriptionLbl.sizeToFit()
+        exerciseDescriptionTV.text = showSelectedExercise.exerciseDescription
+        exerciseDescriptionTV.sizeToFit()
         
-        exerciseDeteilSV.contentSize
+       // exerciseDeteilSV.contentSize
 
         // Do any additional setup after loading the view.
     }

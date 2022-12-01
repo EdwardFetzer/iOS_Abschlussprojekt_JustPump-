@@ -23,8 +23,6 @@ class TrainingVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
 
         trainingCollectionView.backgroundColor = UIColor.clear
         // Do any additional setup after loading the view.
@@ -44,6 +42,14 @@ extension TrainingVC: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.trainingTitleLbl.text = training.trainingName
         cell.trainingTitleLbl.sizeToFit()
         cell.trainingImageIv.image = UIImage(named: training.trainingImageRes)
+        
+        cell.layer.cornerRadius = 20
+        cell.contentView.layer.borderWidth = 2.0
+        cell.contentView.layer.borderColor = UIColor.red.cgColor
+        cell.contentView.layer.cornerRadius = 20.0
+        cell.contentView.layer.masksToBounds = true
+
+        
         return cell
     }
     

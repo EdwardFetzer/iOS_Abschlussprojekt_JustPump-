@@ -9,28 +9,20 @@ import UIKit
 
 class TrainingVC: UIViewController {
     
-    
-    
     @IBOutlet weak var trainingCollectionView: UICollectionView!
     
     var trainingList = getAllTraining()
-    
     var selectedTraining: Training!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         trainingCollectionView.backgroundColor = UIColor.clear
-        // Do any additional setup after loading the view.
-        
     }
-    
 }
-
 extension TrainingVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return trainingList.count
@@ -45,11 +37,9 @@ extension TrainingVC: UICollectionViewDelegate, UICollectionViewDataSource {
         
         cell.layer.cornerRadius = 20
         cell.contentView.layer.borderWidth = 2.0
-        cell.contentView.layer.borderColor = UIColor.red.cgColor
+        cell.contentView.layer.borderColor = UIColor.black.cgColor
         cell.contentView.layer.cornerRadius = 20.0
         cell.contentView.layer.masksToBounds = true
-
-        
         return cell
     }
     

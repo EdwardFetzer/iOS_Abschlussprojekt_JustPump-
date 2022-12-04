@@ -11,30 +11,17 @@ import FirebaseFirestore
 
 class GainVC: UIViewController {
     
-    var trainingList = [GainTraining]()
-    private var selectedTraining: GainTraining!
+    var gainList = [GainTraining]()
+    private var selectedGains: GainTraining!
     
-    @IBOutlet weak var trainingTV: UITableView!
+    @IBOutlet weak var gainsTV: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        trainingTV.delegate = self
-        trainingTV.dataSource = self
-        fetchTraining()
-        
-//        let db = Firestore.firestore()
-//        let citiesRef = db.collection("trainings")
-//
-//        citiesRef.document("SF").setData([
-//            "name": "San Francisco",
-//            "state": "CA",
-//
-//            ])
-       
-        
-
-        // Do any additional setup after loading the view.
+        gainsTV.delegate = self
+        gainsTV.dataSource = self
+        fetchGainTraining()
     }
     
     @IBAction func addTrainingBtn(_ sender: UIBarButtonItem) {
@@ -49,7 +36,6 @@ class GainVC: UIViewController {
         let addAction = UIAlertAction(title: "Hinzufügen", style: .default, handler: { (action) in
             let newTraining = GainTraining(context: context)
             newTraining.name = alert.textFields![0].text!
-            
             newTraining.date = myDatePicker.date
             
             do {
@@ -57,7 +43,7 @@ class GainVC: UIViewController {
             } catch {
                 print("Failed save Training to CoreData")
             }
-            self.fetchTraining()
+            self.fetchGainTraining()
         })
         
         let cancelAction = UIAlertAction(title: "Abbrechen", style: .cancel)
@@ -74,14 +60,13 @@ class GainVC: UIViewController {
         present(alert, animated: true)
     }
     
-    func fetchTraining() {
-        
+    func fetchGainTraining() {
         do {
-            trainingList = try appDelegate.persistentContainer.viewContext.fetch(GainTraining.fetchRequest())
+            gainList = try appDelegate.persistentContainer.viewContext.fetch(GainTraining.fetchRequest())
         } catch {
             print(error.localizedDescription)
         }
-        trainingTV.reloadData()
+        gainsTV.reloadData()
     }
     
     //MARK: deinit
@@ -99,18 +84,17 @@ extension GainVC: UITableViewDelegate, UITableViewDataSource {
         trainingTitleLbl.frame = CGRect.init(x: 5, y: 0, width: headerView.frame.width / 2, height: headerView.frame.height-10)
         trainingTitleLbl.text = "Training"
         trainingTitleLbl.font = .systemFont(ofSize: 16)
-        trainingTitleLbl.textColor = .black
+        trainingTitleLbl.textColor = .init(red: 170, green: 255, blue: 5, alpha: 1)
         
         let dateTitleLbl = UILabel()
         dateTitleLbl.frame = CGRect.init(x: headerView.frame.width / 2, y: 0, width: (headerView.frame.width / 2) - 5, height: headerView.frame.height-10)
         dateTitleLbl.text = "Datum"
         dateTitleLbl.textAlignment = .right
         dateTitleLbl.font = .systemFont(ofSize: 16)
-        dateTitleLbl.textColor = .black
+        dateTitleLbl.textColor = .init(red: 170, green: 255, blue: 5, alpha: 1)
         
         headerView.addSubview(trainingTitleLbl)
         headerView.addSubview(dateTitleLbl)
-        
         return headerView
     }
     
@@ -119,14 +103,15 @@ extension GainVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 80
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let cellSpace: CGFloat = 6
         let myLayer = CALayer()
         myLayer.cornerRadius = 8
-        myLayer.backgroundColor = UIColor.blue.cgColor
+        myLayer.borderWidth = 2.0
+        myLayer.backgroundColor = UIColor.black.cgColor
         myLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 0, dy: cellSpace)
         cell.layer.mask = myLayer
     }
@@ -134,36 +119,31 @@ extension GainVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            let deleteTraining = self.trainingList[indexPath.row]
+            let deleteTraining = self.gainList[indexPath.row]
             context.delete(deleteTraining)
-            self.trainingList.remove(at: indexPath.row)
+            self.gainList.remove(at: indexPath.row)
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
             appDelegate.saveContext()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return trainingList.count
+        return gainList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gainCell", for: indexPath) as! GainCell
         
-        //cell.contentView.layer.cornerRadius = 5
-        
-        cell.trainingLbl.text = trainingList[indexPath.row].name
+        cell.trainingLbl.text = gainList[indexPath.row].name
         
         let dateFormater = DateFormatter()
         dateFormater.dateFormat = "yyy-MM-dd"
-        let dateString = dateFormater.string(from: trainingList[indexPath.row].date ?? Date())
+        let dateString = dateFormater.string(from: gainList[indexPath.row].date ?? Date())
         
         cell.dateLbl.text = dateString
-        
-        
         return cell
     }
     
@@ -171,16 +151,13 @@ extension GainVC: UITableViewDelegate, UITableViewDataSource {
         
         if segue.identifier == "showGains" {
             var viewController = segue.destination as! GainDetailVC
-            
-            viewController.shownTraining = selectedTraining
+            viewController.shownGains = selectedGains
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedTraining = trainingList[indexPath.row]
+        selectedGains = gainList[indexPath.row]
         performSegue(withIdentifier: "showGains", sender: self)
         
     }
-    
-    
 }

@@ -9,9 +9,9 @@ import UIKit
 
 class GainDetailVC: UIViewController {
     
-    var exerciseList = [GainExercise]()
+    var gainExerciseList = [GainExercise]()
     
-    var shownTraining: GainTraining!
+    var shownGains: GainTraining!
 
     @IBOutlet weak var gainExerciseTV: UITableView!
     
@@ -20,11 +20,11 @@ class GainDetailVC: UIViewController {
 
         gainExerciseTV.delegate = self
         gainExerciseTV.dataSource = self
-        fetchExercise()
+        fetchGainExercise()
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func addExerciseBtn(_ sender: UIBarButtonItem) {
+    @IBAction func addGainExerciseBtn(_ sender: UIBarButtonItem) {
         
         let alert = UIAlertController(title: "Übung hinzufügen", message: "Welche übung hast du ausgeführt?", preferredStyle: .alert)
         
@@ -33,14 +33,14 @@ class GainDetailVC: UIViewController {
             newExercise.gainExerciseName = alert.textFields![0].text!
             newExercise.reps = Int16(alert.textFields![1].text!) ?? 0
             newExercise.weight = Float(alert.textFields![2].text!) ?? 0
-            newExercise.gainTraining = self.shownTraining
+            newExercise.gainTraining = self.shownGains
             
             do {
                 try context.save()
             } catch {
                 print("Failed save Exercise to CoreData")
             }
-            self.fetchExercise()
+            self.fetchGainExercise()
         })
         
         let cancelAction = UIAlertAction(title: "Abbrechen", style: .cancel)
@@ -63,8 +63,8 @@ class GainDetailVC: UIViewController {
         present(alert, animated: true)
     }
     
-    func fetchExercise() {
-        exerciseList = shownTraining.gainExercises?.allObjects as! [GainExercise]
+    func fetchGainExercise() {
+        gainExerciseList = shownGains.gainExercises?.allObjects as! [GainExercise]
         gainExerciseTV.reloadData()
     }
     
@@ -129,19 +129,32 @@ extension GainDetailVC: UITableViewDelegate, UITableViewDataSource {
         cell.layer.mask = myLayer
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let deleteExercise = self.gainExerciseList[indexPath.row]
+            context.delete(deleteExercise)
+            self.gainExerciseList.remove(at: indexPath.row)
+            // Delete the row from the data source
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            appDelegate.saveContext()
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return exerciseList.count
+        return gainExerciseList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gainExerciseCell", for: indexPath) as! GainExerciseCell
         
-        cell.exerciseLbl.text = exerciseList[indexPath.row].gainExerciseName
+        cell.exerciseLbl.text = gainExerciseList[indexPath.row].gainExerciseName
         cell.exerciseLbl.sizeToFit()
        // cell.exerciseLbl.centerYAnchor.constraint(equalTo: tableView.centerYAnchor).isActive = true
-        cell.repsLbl.text = exerciseList[indexPath.row].reps.description
+        cell.repsLbl.text = gainExerciseList[indexPath.row].reps.description
         cell.repsLbl.sizeToFit()
-        cell.weightLbl.text = exerciseList[indexPath.row].weight.description
+        cell.weightLbl.text = gainExerciseList[indexPath.row].weight.description
         cell.weightLbl.sizeToFit()
         
         return cell

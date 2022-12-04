@@ -12,17 +12,17 @@ func getChestExercises() -> [Exercise] {
         
     Exercise(
         exerciseName: "Liegestützen",
-        exerciseImageRes: "liegestütze1",
+        exerciseImageRes: "liegestuetze1",
         exerciseDescription: "Körperposition\n Zunächst begibst du dich auf deine Knie. Die Hände stützt duschulterbreit auf den Boden. In der Ausgangstellung befinden sich deine Hände unter deiner Brust. Strecke die Beine nach hinten aus. Deine Hände und deine Zehenspitzen halten das Körpergewicht. Achte darauf, dass Beine, Oberkörper und Kopf eine gerade Linie bilden. Du spannst deinen ganzen Körper an.\n\n Bewegungsausführung\n Nun senkst du den ganzen Körper nach unten ab. Dabei ist es wichtig, dass du die Körperspannung hältst. Deine Brust und Arme übernehmen die vollständige Arbeit. Beim Einatmen senkst du den Körper ab. Die Ellenbogen befinden sich neben deinem Körper und zeigen nicht vollständig nach außen. Anschließend atmest du aus und drückst den Körper wieder nach oben."),
     
     Exercise(
         exerciseName: "Positive Liegestützen",
-        exerciseImageRes: "positiveLiegestütze1",
+        exerciseImageRes: "positiveLiegestuetze1",
         exerciseDescription: "Körperposition\nZunächst nimmst du die typische Ausgangsposition für die Liegestütze ein. Du kniest dich auf den Boden, positionierst die Arme unter den Schultern und streckst die Beine durch. Dein Körper bildet eine Gerade. Allerdings befinden sich deine Hände auf der Erhöhung. Die Muskelspannung ist bei der positiven Liegestütze besonders wichtig.\n\nBewegungsausführung\nLangsam senkst du den gesamten Körper nach unten, bis deine Brust knapp über der Erhöhung schwebt. Im Anschluss drückst du deinen Körper wieder nach oben, ohne mit Schwung den Muskelreiz zu verringern. Atme während dieser Bewegung aus. Die Arme sind in der Endposition immer noch leicht gebeugt."),
     
     Exercise(
         exerciseName: "Negative Liegestützen",
-        exerciseImageRes: "negativeLiegestütze1",
+        exerciseImageRes: "negativeLiegestuetze1",
         exerciseDescription: "Körperposition\nBei dieser Übung benötigst du eine Erhöhung für deine Füße. Stuhl oder Bett zuhause oder Flachbank im Gym eignen sich für die negative Liegestütze. Deine Handflächen positionierst du in Schulterbreite auf der Höhe deiner Brust. Achte erneut darauf, dass dein ganzer Körper gerade ist. Körperspannung ist wichtig, während du den Boden anschaust.\n\nBewegungsausführung\nWenn du dich in der Ausgangsposition befindest, atmest du ein und senkst dabei deinen Oberkörper nach unten. Die Ellenbogen beugst du langsam ein. Anschließend atmest du aus und drückst deine Brust wieder nach oben, bis die Arme fast vollständig durchgestreckt sind."),
     ]
 }

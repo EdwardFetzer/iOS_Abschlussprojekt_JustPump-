@@ -11,32 +11,24 @@ class NutritionDetailScreenVC: UIViewController {
     
     var showSelectedNutrition: Nutrition!
     
+    @IBOutlet weak var nutritionView: UIView!
     @IBOutlet weak var nutritionImageIV: UIImageView!
     @IBOutlet weak var nutritionTitleLbl: UILabel!
     @IBOutlet weak var nutritionDetailTextView: UITextView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nutritionView.layer.cornerRadius = 20
+        nutritionView.layer.borderWidth = 2.0
+        nutritionView.layer.masksToBounds = true
+        
         nutritionImageIV.image = UIImage(named: showSelectedNutrition.nutritionImageRes)
+        
         nutritionTitleLbl.text = showSelectedNutrition.nutritionName
         nutritionTitleLbl.sizeToFit()
+        
         nutritionDetailTextView.text = showSelectedNutrition.nutritionDescription
         nutritionDetailTextView.sizeToFit()
-
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

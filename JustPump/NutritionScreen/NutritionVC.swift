@@ -12,30 +12,13 @@ class NutritionVC: UIViewController {
     @IBOutlet weak var nutritionCollectionView: UICollectionView!
     
     var nutritionList = getAllNutritions()
-    
     var selectedNutrition: Nutrition!
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
 extension NutritionVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return nutritionList.count
@@ -47,6 +30,11 @@ extension NutritionVC: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.nutritionTitleLbl.sizeToFit()
         cell.nutritionImageIv.image = UIImage(named: nutritionList[indexPath.row].nutritionImageRes)
         
+        cell.layer.cornerRadius = 20
+        cell.contentView.layer.borderWidth = 2.0
+        cell.contentView.layer.borderColor = UIColor.black.cgColor
+        cell.contentView.layer.cornerRadius = 20.0
+        cell.contentView.layer.masksToBounds = true
         return cell
     }
     

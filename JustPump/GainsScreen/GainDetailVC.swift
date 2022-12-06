@@ -7,25 +7,26 @@
 
 import UIKit
 
+//MARK: View Controller
 class GainDetailVC: UIViewController {
     
     var gainExerciseList = [GainExercise]()
-    
     var shownGains: GainTraining!
-
+    
     @IBOutlet weak var gainExerciseTV: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         gainExerciseTV.delegate = self
         gainExerciseTV.dataSource = self
         fetchGainExercise()
-        // Do any additional setup after loading the view.
     }
     
+    // Neue Übung wird hinzugefügt
     @IBAction func addGainExerciseBtn(_ sender: UIBarButtonItem) {
         
+        // Alert wird erstellt
         let alert = UIAlertController(title: "Übung hinzufügen", message: "Welche übung hast du ausgeführt?", preferredStyle: .alert)
         
         let addAction = UIAlertAction(title: "Hinzufügen", style: .default, handler: { (action) in
@@ -44,66 +45,59 @@ class GainDetailVC: UIViewController {
         })
         
         let cancelAction = UIAlertAction(title: "Abbrechen", style: .cancel)
-        
         alert.addAction(addAction)
         alert.addAction(cancelAction)
-        
         alert.addTextField(configurationHandler: { (exerciseNameTF) in
             exerciseNameTF.placeholder = "Übung"
         })
-        
         alert.addTextField(configurationHandler: { (repsTF) in
             repsTF.placeholder = "Wiederholungen"
         })
-        
         alert.addTextField(configurationHandler: { (weightTF) in
             weightTF.placeholder = "Gewicht"
-            
         })
         present(alert, animated: true)
     }
     
+    // Übung wird in CoreData gespeichert
     func fetchGainExercise() {
         gainExerciseList = shownGains.gainExercises?.allObjects as! [GainExercise]
+        gainExerciseList = gainExerciseList.sorted(by: {
+            $0.gainExerciseName!.compare($1.gainExerciseName!) == .orderedAscending
+        })
         gainExerciseTV.reloadData()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+//MARK: Table View Data Source / View Deligate
 extension GainDetailVC: UITableViewDelegate, UITableViewDataSource {
     
+    // Überschrift für die Table View wird erstellt
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 26))
         
         let exerciseTitleLbl = UILabel()
+        // Position des Labels wird bestimmt
         exerciseTitleLbl.frame = CGRect.init(x: 10, y: 0, width: (headerView.frame.width / 2) - 5, height: headerView.frame.height-10)
         exerciseTitleLbl.text = "Übung"
         exerciseTitleLbl.font = .systemFont(ofSize: 16)
-        exerciseTitleLbl.textColor = .black
+        exerciseTitleLbl.textColor = .white
         
         let repsLbl = UILabel()
+        // Position des Labels wird bestimmt
         repsLbl.frame = CGRect.init(x: headerView.frame.width / 3, y: 0, width: (headerView.frame.width / 2) - 10, height: headerView.frame.height-10)
         repsLbl.text = "Wdh"
         repsLbl.textAlignment = .right
         repsLbl.font = .systemFont(ofSize: 16)
-        repsLbl.textColor = .black
+        repsLbl.textColor = .white
         
         let weightLbl = UILabel()
+        // Position des Labels wird bestimmt
         weightLbl.frame = CGRect.init(x: headerView.frame.width / 2, y: 0, width: (headerView.frame.width / 2) - 10, height: headerView.frame.height-10)
         weightLbl.text = "Kg"
         weightLbl.textAlignment = .right
         weightLbl.font = .systemFont(ofSize: 16)
-        weightLbl.textColor = .black
+        weightLbl.textColor = .white
         
         headerView.addSubview(exerciseTitleLbl)
         headerView.addSubview(repsLbl)
@@ -113,16 +107,20 @@ extension GainDetailVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        //Größe der Überschrift
         return 26
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //Größe der Celle
         return 60
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        //Abstand zwichen den cellen
         let cellSpace: CGFloat = 6
         let myLayer = CALayer()
+        //Layer wird erstellt
         myLayer.cornerRadius = 8
         myLayer.backgroundColor = UIColor.blue.cgColor
         myLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 0, dy: cellSpace)
@@ -134,11 +132,11 @@ extension GainDetailVC: UITableViewDelegate, UITableViewDataSource {
             let deleteExercise = self.gainExerciseList[indexPath.row]
             context.delete(deleteExercise)
             self.gainExerciseList.remove(at: indexPath.row)
-            // Delete the row from the data source
+            // Löschen der celle aus der data source
             tableView.deleteRows(at: [indexPath], with: .fade)
             appDelegate.saveContext()
         } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            // Erstellt eine neue instance und fügt es dem array hinzu, und erstellt eine neue Celle in der table view
         }
     }
     
@@ -151,7 +149,6 @@ extension GainDetailVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.exerciseLbl.text = gainExerciseList[indexPath.row].gainExerciseName
         cell.exerciseLbl.sizeToFit()
-       // cell.exerciseLbl.centerYAnchor.constraint(equalTo: tableView.centerYAnchor).isActive = true
         cell.repsLbl.text = gainExerciseList[indexPath.row].reps.description
         cell.repsLbl.sizeToFit()
         cell.weightLbl.text = gainExerciseList[indexPath.row].weight.description

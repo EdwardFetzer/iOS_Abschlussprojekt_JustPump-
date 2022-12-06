@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: View Controller
 class NutritionVC: UIViewController {
     
     @IBOutlet weak var nutritionCollectionView: UICollectionView!
@@ -19,6 +20,7 @@ class NutritionVC: UIViewController {
     }
 }
 
+//MARK: Collection View Data Source / View Deligate
 extension NutritionVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return nutritionList.count
@@ -30,6 +32,7 @@ extension NutritionVC: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.nutritionTitleLbl.sizeToFit()
         cell.nutritionImageIv.image = UIImage(named: nutritionList[indexPath.row].nutritionImageRes)
         
+        //Lauyer wird erstellt
         cell.layer.cornerRadius = 20
         cell.contentView.layer.borderWidth = 2.0
         cell.contentView.layer.borderColor = UIColor.black.cgColor
@@ -38,6 +41,7 @@ extension NutritionVC: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
     
+    //MARK: prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showNutrition" {
             let viewController = segue.destination as! NutritionDetailScreenVC

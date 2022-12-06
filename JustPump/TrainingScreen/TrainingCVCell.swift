@@ -7,10 +7,8 @@
 
 import UIKit
 
-
 class TrainingCVCell: UICollectionViewCell {
     
     @IBOutlet weak var trainingImageIv: UIImageView!
     @IBOutlet weak var trainingTitleLbl: UILabel!
-    
 }

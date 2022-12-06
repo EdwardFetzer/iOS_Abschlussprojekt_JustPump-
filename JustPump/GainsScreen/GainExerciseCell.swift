@@ -9,10 +9,7 @@ import UIKit
 
 class GainExerciseCell: UITableViewCell {
 
-    
     @IBOutlet weak var exerciseLbl: UILabel!
-    
     @IBOutlet weak var repsLbl: UILabel!
-    
     @IBOutlet weak var weightLbl: UILabel!
 }

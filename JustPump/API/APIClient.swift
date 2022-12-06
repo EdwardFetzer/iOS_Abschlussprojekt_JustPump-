@@ -9,6 +9,7 @@ import Foundation
 
 struct APIClient {
     
+    // Daten werden abgefragt
     func getMacros (searchItem: String, completion: @escaping(Macros) -> Void) {
         let headers = [
             "X-RapidAPI-Key": "\(apiKey)",
@@ -24,22 +25,18 @@ struct APIClient {
             
             if (error != nil) {
                 print(error!)
-                
             } else {
-                
                 let decoder = JSONDecoder()
                 do {
+                    // Verarbeite die Server Antwort als Macros
                     let macros = try decoder.decode(Macros.self, from: data!)
-                    
                     
                     if macros.items!.isEmpty {
                         print("empty List")
                     } else {
-                        
                         print(macros.items!)
+                        // Wenn der Call beendet ist, übergebe der completion die Macros Objekte
                         completion(macros)
-                        
-                        
                     }
                     //
                 } catch {
@@ -47,7 +44,6 @@ struct APIClient {
                 }
             }
         })
-        
         dataTask.resume()
     }
 }

@@ -128,6 +128,7 @@
 		E23AEA4A2910039B007B4845 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E2531C7629029B1A00B90D0F /* Utilities.swift */,
 				E23AEA4B291003B3007B4845 /* Constants.swift */,
 				E2E84A432919503400B96977 /* TrainingResources.swift */,
 				E2C83380291ACD1500EFB4CC /* ExerciseResources.swift */,
@@ -170,7 +171,6 @@
 				E2531C4629012E1200B90D0F /* Main.storyboard */,
 				E2531C4C29012E1400B90D0F /* Assets.xcassets */,
 				E2531C4E29012E1400B90D0F /* LaunchScreen.storyboard */,
-				E2531C7629029B1A00B90D0F /* Utilities.swift */,
 				E2531C5129012E1400B90D0F /* Info.plist */,
 				E2531C5729012F4800B90D0F /* GoogleService-Info.plist */,
 				E2531C4929012E1200B90D0F /* JustPump.xcdatamodeld */,

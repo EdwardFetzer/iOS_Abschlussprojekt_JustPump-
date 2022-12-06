@@ -7,25 +7,24 @@
 
 import UIKit
 
+//MARK: View Controller
 class ExerciseVC: UIViewController {
     
     var showSelectedTraining: Training!
-    
     var selectedExercise: Exercise!
+    var exerciseList: [Exercise]!
     
     @IBOutlet weak var exerciseCollectionView: UICollectionView!
     
-    var exerciseList: [Exercise]!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         exerciseList = showSelectedTraining.trainingExercises
         exerciseCollectionView.backgroundColor = UIColor.clear
-
-        // Do any additional setup after loading the view.
     }
 }
 
+//MARK: Collection View Data Source / View Deligate
 extension ExerciseVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return exerciseList.count
@@ -37,12 +36,12 @@ extension ExerciseVC: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.exerciseTitleLbl.sizeToFit()
         cell.exerciseImmageIv.image = UIImage(named: exerciseList[indexPath.row].exerciseImageRes)
         
+        //Layer wird erstellt
         cell.layer.cornerRadius = 20
         cell.contentView.layer.borderWidth = 2.0
         cell.contentView.layer.borderColor = UIColor.black.cgColor
         cell.contentView.layer.cornerRadius = 20
         cell.contentView.layer.masksToBounds = true
-        
         return cell
     }
     

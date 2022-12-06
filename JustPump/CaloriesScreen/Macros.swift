@@ -10,7 +10,6 @@ import Foundation
 struct Macros: Codable {
     
     var items: [Item]?
-    
 }
 
 struct Item: Codable {

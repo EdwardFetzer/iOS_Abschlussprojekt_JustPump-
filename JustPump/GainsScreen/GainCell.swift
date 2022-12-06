@@ -11,5 +11,4 @@ class GainCell: UITableViewCell {
     
     @IBOutlet weak var trainingLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
-    
 }

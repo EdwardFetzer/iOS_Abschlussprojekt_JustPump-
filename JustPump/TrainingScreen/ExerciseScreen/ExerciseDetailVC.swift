@@ -19,6 +19,7 @@ class ExerciseDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Layer wird erstellt
         exerciseView.layer.cornerRadius = 20
         exerciseView.layer.borderWidth = 2.0
         exerciseView.layer.masksToBounds = true

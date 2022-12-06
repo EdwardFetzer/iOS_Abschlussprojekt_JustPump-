@@ -17,10 +17,15 @@ class LoginVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        errorLBL.isHidden = true
+        errorLBL.sizeToFit()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    //Vorhandener User wird eingeloggt
     @IBAction func loginBtn(_ sender: UIButton) {
         
         Auth.auth().signIn(withEmail: emailTF.text!, password: passwordTF.text!) { [weak self] authResult, error in
@@ -30,22 +35,27 @@ class LoginVC: UIViewController {
                 strongSelf.performSegue(withIdentifier: "succesLogin", sender: nil)
             } else {
                 strongSelf.errorLBL.text = "Überprüfe deine Eingaben"
+                strongSelf.errorLBL.isHidden = false
             }
-          
+        }
+    }
+    
+    //MARK: Keyboard-Überlappung regeln
+    @objc func keyboardWillShow(notification: NSNotification){
+        
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 && passwordTF.isFirstResponder {
+                self.view.frame.origin.y -= keyboardSize.height
+            }; if self.view.frame.origin.y == 0 && emailTF.isFirstResponder {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
         }
         
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func keyboardWillHide(notification: NSNotification){
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
-    */
-
 }

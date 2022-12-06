@@ -9,8 +9,6 @@ import UIKit
 
 class CaloriesVC: UIViewController {
     
-  //  var macro: Item?
-    
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var servingSizeLbl: UILabel!
     @IBOutlet weak var caloriesLbl: UILabel!
@@ -22,17 +20,15 @@ class CaloriesVC: UIViewController {
     @IBOutlet weak var choletorolLbl: UILabel!
     @IBOutlet weak var sodiumLbl: UILabel!
     @IBOutlet weak var potassiumLbl: UILabel!
-    
     @IBOutlet weak var search: UITextField!
+    
     let apiClient = APIClient()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
+    // senden einer abfrage für die Macros
     @IBAction func searchBtn(_ sender: UIButton) {
         let searchTxt = search.text
         
@@ -52,22 +48,7 @@ class CaloriesVC: UIViewController {
                 self.choletorolLbl.text = newMacro?.cholesterol_mg.description
                 self.sodiumLbl.text = newMacro?.sodium_mg.description
                 self.potassiumLbl.text = newMacro?.potassium_mg.description
-                
-                
-                //self.testLbl.text = macro.items?[0].calories.description
             }
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

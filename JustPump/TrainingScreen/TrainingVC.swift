@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: View Controller
 class TrainingVC: UIViewController {
     
     @IBOutlet weak var trainingCollectionView: UICollectionView!
@@ -17,12 +18,15 @@ class TrainingVC: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         trainingCollectionView.backgroundColor = UIColor.clear
     }
 }
+
+//MARK: Collection View Data Source / View Deligate
 extension TrainingVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return trainingList.count
@@ -35,6 +39,7 @@ extension TrainingVC: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.trainingTitleLbl.sizeToFit()
         cell.trainingImageIv.image = UIImage(named: training.trainingImageRes)
         
+        //Layer wird erstellt
         cell.layer.cornerRadius = 20
         cell.contentView.layer.borderWidth = 2.0
         cell.contentView.layer.borderColor = UIColor.black.cgColor
@@ -43,6 +48,7 @@ extension TrainingVC: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
     
+    //MARK: prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showExercises" {
@@ -56,5 +62,4 @@ extension TrainingVC: UICollectionViewDelegate, UICollectionViewDataSource {
         selectedTraining = trainingList[indexPath.row]
         performSegue(withIdentifier: "showExercises", sender: nil)
     }
-    
 }

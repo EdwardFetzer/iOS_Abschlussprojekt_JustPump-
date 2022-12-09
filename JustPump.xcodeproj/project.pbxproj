@@ -19,7 +19,6 @@
 		E24E7FFE292E4BC400853206 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24E7FFD292E4BC400853206 /* LoginVC.swift */; };
 		E2531C4129012E1200B90D0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2531C4029012E1200B90D0F /* AppDelegate.swift */; };
 		E2531C4329012E1200B90D0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2531C4229012E1200B90D0F /* SceneDelegate.swift */; };
-		E2531C4529012E1200B90D0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2531C4429012E1200B90D0F /* ViewController.swift */; };
 		E2531C4829012E1200B90D0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2531C4629012E1200B90D0F /* Main.storyboard */; };
 		E2531C4B29012E1200B90D0F /* JustPump.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2531C4929012E1200B90D0F /* JustPump.xcdatamodeld */; };
 		E2531C4D29012E1400B90D0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2531C4C29012E1400B90D0F /* Assets.xcassets */; };
@@ -63,7 +62,6 @@
 		E2531C3D29012E1200B90D0F /* JustPump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustPump.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2531C4029012E1200B90D0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2531C4229012E1200B90D0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E2531C4429012E1200B90D0F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E2531C4729012E1200B90D0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2531C4A29012E1200B90D0F /* JustPump.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JustPump.xcdatamodel; sourceTree = "<group>"; };
 		E2531C4C29012E1400B90D0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,17 +155,17 @@
 		E2531C3F29012E1200B90D0F /* JustPump */ = {
 			isa = PBXGroup;
 			children = (
-				E23AEA40290FD4CB007B4845 /* API */,
-				E2A2A266290FC97B00CBDEAA /* CaloriesScreen */,
 				E2531C722902998200B90D0F /* RegisterScreen */,
-				E2531C6F2901505D00B90D0F /* TrainingScreen */,
 				E2531C6E2901502100B90D0F /* HomeScreen */,
+				E2531C6F2901505D00B90D0F /* TrainingScreen */,
+				E2E84A372915532200B96977 /* ExerciseScreen */,
 				E2531C62290149E300B90D0F /* NutritionScreen */,
 				E23AEA47290FFB19007B4845 /* GainsScreen */,
+				E2A2A266290FC97B00CBDEAA /* CaloriesScreen */,
+				E23AEA40290FD4CB007B4845 /* API */,
 				E23AEA4A2910039B007B4845 /* Model */,
 				E2531C4029012E1200B90D0F /* AppDelegate.swift */,
 				E2531C4229012E1200B90D0F /* SceneDelegate.swift */,
-				E2531C4429012E1200B90D0F /* ViewController.swift */,
 				E2531C4629012E1200B90D0F /* Main.storyboard */,
 				E2531C4C29012E1400B90D0F /* Assets.xcassets */,
 				E2531C4E29012E1400B90D0F /* LaunchScreen.storyboard */,
@@ -203,7 +201,6 @@
 				E2E84A2D2913E8F400B96977 /* TrainingVC.swift */,
 				E2E84A2F2913EF5200B96977 /* TrainingCVCell.swift */,
 				E2E84A3F29194ADB00B96977 /* Training.swift */,
-				E2E84A372915532200B96977 /* ExerciseScreen */,
 			);
 			path = TrainingScreen;
 			sourceTree = "<group>";
@@ -328,7 +325,6 @@
 			files = (
 				E24E7FFE292E4BC400853206 /* LoginVC.swift in Sources */,
 				E2531C6D29014B2C00B90D0F /* GainCell.swift in Sources */,
-				E2531C4529012E1200B90D0F /* ViewController.swift in Sources */,
 				E2531C7729029B1A00B90D0F /* Utilities.swift in Sources */,
 				E2531C712902840800B90D0F /* HomeVC.swift in Sources */,
 				E23AEA46290FD54C007B4845 /* Macros.swift in Sources */,

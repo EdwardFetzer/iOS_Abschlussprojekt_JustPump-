@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Q0-kv-2vo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eaa-ml-CIL">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -376,7 +376,11 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFT-k5-sVQ">
-                                <rect key="frame" x="174.33333333333334" y="279.66666666666669" width="41.333333333333343" height="20.333333333333314"/>
+                                <rect key="frame" x="45" y="190" width="300" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="K8D-j2-U4a"/>
+                                    <constraint firstAttribute="height" constant="110" id="UbA-aU-9Ff"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -390,6 +394,7 @@
                             <constraint firstItem="mTY-ti-Cb0" firstAttribute="trailing" secondItem="bgW-SG-p8a" secondAttribute="trailing" constant="42" id="7AS-WF-CXp"/>
                             <constraint firstItem="z8p-Zg-Jo0" firstAttribute="leading" secondItem="mTY-ti-Cb0" secondAttribute="leading" constant="42" id="9tU-aY-1eb"/>
                             <constraint firstItem="z8p-Zg-Jo0" firstAttribute="top" secondItem="bgW-SG-p8a" secondAttribute="bottom" constant="32" id="BdH-Uq-wNe"/>
+                            <constraint firstItem="gh6-hJ-han" firstAttribute="top" secondItem="kFT-k5-sVQ" secondAttribute="bottom" constant="20" id="Fvb-vP-6L3"/>
                             <constraint firstItem="mTY-ti-Cb0" firstAttribute="trailing" secondItem="z8p-Zg-Jo0" secondAttribute="trailing" constant="42" id="HwQ-fa-wL3"/>
                             <constraint firstItem="XmM-Ui-QKo" firstAttribute="leading" secondItem="mTY-ti-Cb0" secondAttribute="leading" constant="42" id="JCk-9a-tdF"/>
                             <constraint firstItem="ngn-6E-raW" firstAttribute="top" secondItem="XmM-Ui-QKo" secondAttribute="bottom" constant="32" id="N2m-sX-Fsg"/>
@@ -1137,7 +1142,10 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogp-kV-vq4">
-                                <rect key="frame" x="174.33333333333334" y="395.66666666666669" width="41.333333333333343" height="20.333333333333314"/>
+                                <rect key="frame" x="45" y="395.66666666666669" width="300" height="20.333333333333314"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="vQP-Hh-L7f"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
